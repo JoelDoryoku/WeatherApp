@@ -1,0 +1,28 @@
+---
+// Importing language and title from Astro props
+const { 
+    lang = 'en',        // Default language is English
+    title = 'Document', // Default title is 'Document'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+    <head>
+        <!-- Meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title -->
+        <title>{title}</title>
+        
+        <!-- Slot for additional head elements -->
+        <slot name="head"></slot>
+    </head>
+    <body>
+        <!-- Main content -->
+        <main>
+            <slot name="body"></slot>
+        </main>
+    </body>
+</html>
