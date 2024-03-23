@@ -7,39 +7,58 @@
     // API Key
     const API_KEY = import.meta.env.PUBLIC_API_KEY; // Get API key from environment variable
 
-    // Function to construct the URL
-    function constructUrl() {
+    /**
+     * Constructs the URL for the weather API request.
+     * @returns {string} The constructed URL.
+     */
+    function constructUrl(): string {
         return `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}`;
     }
 
-    // Function to handle the response
-    async function handleResponse(response: Response) {
+    /**
+     * Handles the response from the API request.
+     * @param {Response} response - The response object from the API request.
+     * @returns {Promise<any>} A promise that resolves to the parsed JSON response.
+     * @throws {Error} If the response status is not ok.
+     */
+    async function handleResponse(response: Response): Promise<any> {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}, url: ${response.url}`);
         }
         return await response.json();
     }
 
-    // Function to fetch data
-    async function fetchData() {
+    /**
+     * Fetches weather data from the API.
+     * @returns {Promise<any>} A promise that resolves to the fetched weather data.
+     */
+    async function fetchData(): Promise<any> {
         const url = constructUrl();
         const response = await fetch(url);
         return await handleResponse(response);
     }
 
-    // Function to handle data
-    function handleData(data: JSON) {
+    /**
+     * Handles the fetched weather data.
+     * @param {JSON} data - The fetched weather data.
+     */
+    function handleData(data: JSON): void {
         // Save the data to the store
         $weatherData = JSON.stringify(data);
     }
 
-    // Function to handle error
-    function handleError(error: unknown) {
+    /**
+     * Handles errors that occur during the API request.
+     * @param {unknown} error - The error object.
+     */
+    function handleError(error: unknown): void {
         console.error('An error occurred:', error); // Replace with your actual error handling logic
     }
 
-    // Function to search weather
-    async function searchWeather() {
+    /**
+     * Searches for weather data based on the user's input.
+     */
+    async function searchWeather(): Promise<void> {
         try {
             // Fetch the data
             const data = await fetchData();
