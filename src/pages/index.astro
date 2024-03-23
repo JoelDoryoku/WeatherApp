@@ -1,11 +1,21 @@
 ---
-// Importing the BasicLayout layout
-import BasicLayout from '../layouts/BasicLayout.astro';
+// Importing the necessary components
+import BasicLayout from '../layouts/BasicLayout.astro'; // Basic layout component
+import Search from '../components/Search.svelte'; // Search component
+import Test from '../components/Test.svelte'; // Test component
 ---
 
-<BasicLayout lang="es" title="WeatherApp">
-	<!-- This is the body section of the BasicLayout -->
+<!-- Using BasicLayout component -->
+<BasicLayout 
+    lang="es"
+    title="WeatherApp"
+>
+	<!-- Body section of the BasicLayout -->
 	<section slot="body">
-		<!-- Content goes here -->
+		<!-- Search component -->
+		<Search client:load />
+
+		<!-- Test component -->
+		<Test client:load />
 	</section>
 </BasicLayout>
