@@ -14,6 +14,23 @@
     function constructUrl(): string {
         return `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}`;
     }
+    
+    /**
+     * Determines the type of HTTP error based on the status code.
+     * @param {number} status - The HTTP status code.
+     * @returns {string} The type of HTTP error.
+     */
+    function getErrorType(status: number): string {
+        switch (status) {
+            case 400: return 'Bad Request';
+            case 401: return 'Unauthorized';
+            case 403: return 'Forbidden';
+            case 404: return 'Not Found';
+            case 500: return 'Internal Server Error';
+            // Add more cases as needed
+            default: return 'Unknown Error';
+        }
+    }
 
     /**
      * Handles the response from the API request.
@@ -23,7 +40,8 @@
      */
     async function handleResponse(response: Response): Promise<any> {
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}, url: ${response.url}`);
+            const errorType = getErrorType(response.status);
+            throw new Error(`HTTP error! status: ${response.status} (${errorType}), url: ${response.url}`);
         }
         return await response.json();
     }
