@@ -1,6 +1,7 @@
 ---
 // Importing the necessary components
-import BasicLayout from '../layouts/BasicLayout.astro'; // Basic layout component
+import BasicLayout from '../layouts/BasicLayout.astro'; // BasicLayout layout
+import WeatherCard from '../layouts/WeatherCard.astro';  // WeatherCard layout
 import Search from '../components/Search.svelte'; // Search component
 import Current from '../components/Current.svelte'; // Current component
 ---
@@ -16,6 +17,8 @@ import Current from '../components/Current.svelte'; // Current component
 		<Search client:load />
 
 		<!-- Current component -->
-		<Current client:load />
+		<WeatherCard>
+			<Current client:load />
+		</WeatherCard>
 	</section>
 </BasicLayout>

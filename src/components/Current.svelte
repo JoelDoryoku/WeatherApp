@@ -28,34 +28,29 @@
     });
 </script>
 
-<section>
-    {#if data}
-        <!-- Current Weather card -->
-        <div class="flex flex-col justify-between gap-2 rounded-xl border bg-card p-4 text-card-foreground shadow-sm font-semibold">
-            <!-- Day of the week -->
-            <span class="text-lg">{dayOfWeek}</span>
+{#if data}
+    <!-- Day of the week -->
+    <span class="text-lg">{dayOfWeek}</span>
 
-            <!-- Location name with icon -->
-            <div class="flex gap-0.5 font-bold">
-                {data.location.name}
-                <i data-svelte-h="svelte-yv38kx">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4 fill-none stroke-black dark:stroke-white">
-                        <path d="M7.39993 6.32003L15.8899 3.49003C19.6999 2.22003 21.7699 4.30003 20.5099 8.11003L17.6799 16.6C15.7799 22.31 12.6599 22.31 10.7599 16.6L9.91993 14.08L7.39993 13.24C1.68993 11.34 1.68993 8.23003 7.39993 6.32003Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M10.1101 13.6501L13.6901 10.0601" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </i>
-            </div>
+    <!-- Location name with icon -->
+    <div class="flex gap-0.5 font-bold">
+        {data.location.name}
+        <i data-svelte-h="svelte-yv38kx">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4 fill-none stroke-black dark:stroke-white">
+                <path d="M7.39993 6.32003L15.8899 3.49003C19.6999 2.22003 21.7699 4.30003 20.5099 8.11003L17.6799 16.6C15.7799 22.31 12.6599 22.31 10.7599 16.6L9.91993 14.08L7.39993 13.24C1.68993 11.34 1.68993 8.23003 7.39993 6.32003Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.1101 13.6501L13.6901 10.0601" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </i>
+    </div>
 
-            <!-- Temperature -->
-            <span class="font-bold text-7xl block mx-auto py-5">{data.current.temp_c}º</span>
+    <!-- Temperature -->
+    <span class="font-bold text-7xl block mx-auto py-5">{data.current.temp_c}º</span>
 
-            <!-- Weather icon -->
-            <span>
-                <img src="/icons/wi-{svgCondition}-day.svg" alt="{svgCondition} image" />
-            </span>
+    <!-- Weather icon -->
+    <span>
+        <img src="/icons/wi-{svgCondition}-day.svg" alt="{svgCondition} image" />
+    </span>
 
-            <!-- Weather condition text -->
-            <span>{data.current.condition.text}</span>
-        </div>
-    {/if}
-</section>
+    <!-- Weather condition text -->
+    <span>{data.current.condition.text}</span>
+{/if}

@@ -89,6 +89,10 @@
             handleError(error);
         }
     }
+
+    // First search on page load
+    search = 'Barcelona';
+    searchWeather();
 </script>
 
 <div>
