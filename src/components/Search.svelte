@@ -70,7 +70,9 @@
      * @param {unknown} error - The error object.
      */
     function handleError(error: unknown): void {
-        console.error('An error occurred:', error); // Replace with your actual error handling logic
+        console.error('An error occurred:', error);
+        
+        // TODO: Add user-friendly error handling here
     }
 
     /**
