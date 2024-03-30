@@ -2,7 +2,7 @@
     import { weatherData } from '../stores.js';
 
     // Initialize search variable
-    let search = '';
+    let search = 'Barcelona';
 
     // API Key
     const API_KEY = import.meta.env.PUBLIC_API_KEY; // Get API key from environment variable
@@ -91,7 +91,6 @@
     }
 
     // First search on page load
-    search = 'Barcelona';
     searchWeather();
 </script>
 
