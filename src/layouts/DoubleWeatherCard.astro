@@ -1,0 +1,16 @@
+---
+import WeatherCard from './WeatherCard.astro';  // WeatherCard layout
+---
+
+<!-- Grid container for two WeatherCards -->
+<div class="grid grid-cols-2 gap-4">
+    <!-- Left WeatherCard -->
+    <WeatherCard>
+       <slot name="left" />
+    </WeatherCard>
+    
+    <!-- Right WeatherCard -->
+    <WeatherCard>
+       <slot name="right" />
+    </WeatherCard>
+</div>
