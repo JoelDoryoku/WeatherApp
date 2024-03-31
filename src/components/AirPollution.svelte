@@ -24,6 +24,7 @@
 </script>
 
 {#if data}
+    <!-- Air pollution icon and label -->
     <div class="flex flex-row items-center gap-2 text-sm font-semibold leading-none tracking-tight text-neutral-600">
         <i>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 invert dark:invert-0">
@@ -38,9 +39,13 @@
         </i>
         <span>Air pollution</span>
     </div>
+
+    <!-- Progress bar for air quality -->
     <div class="my-8 progress relative h-2.5 w-full overflow-hidden rounded-full bg-[linear-gradient(90deg,#3a6eb4,#7ed457,#f8d449,#eb4d60,#b460e7,#b22222)]">
         <div class="absolute h-2.5 w-2.5 flex-1 rounded-full bg-black shadow-lg shadow-white ring-2 ring-white transition-all" style="left: {airQuality * 9.675}%;"></div>
     </div>
+
+    <!-- Display air quality status based on airQuality value -->
     {#if airQuality < 3}
         <span class="text-xs text-neutral-600">Air quality is good.</span>
     {:else if airQuality >= 3 && airQuality < 6}
