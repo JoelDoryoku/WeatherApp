@@ -4,6 +4,7 @@ import BasicLayout from '../layouts/BasicLayout.astro'; // BasicLayout layout
 import WeatherCard from '../layouts/WeatherCard.astro';  // WeatherCard layout
 import Search from '../components/Search.svelte'; // Search component
 import Current from '../components/Current.svelte'; // Current component
+import AirPollution from '../components/AirPollution.svelte';
 ---
 
 <!-- Using BasicLayout component -->
@@ -19,6 +20,11 @@ import Current from '../components/Current.svelte'; // Current component
 		<!-- Current component -->
 		<WeatherCard>
 			<Current client:load />
+		</WeatherCard>
+
+		<!-- Air pollution component -->
+		<WeatherCard>
+			<AirPollution client:load />
 		</WeatherCard>
 	</section>
 </BasicLayout>

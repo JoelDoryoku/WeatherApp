@@ -35,7 +35,7 @@
     <!-- Location name with icon -->
     <div class="flex gap-0.5 font-bold">
         {data.location.name}
-        <i data-svelte-h="svelte-yv38kx">
+        <i>
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4 fill-none stroke-black dark:stroke-white">
                 <path d="M7.39993 6.32003L15.8899 3.49003C19.6999 2.22003 21.7699 4.30003 20.5099 8.11003L17.6799 16.6C15.7799 22.31 12.6599 22.31 10.7599 16.6L9.91993 14.08L7.39993 13.24C1.68993 11.34 1.68993 8.23003 7.39993 6.32003Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M10.1101 13.6501L13.6901 10.0601" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>

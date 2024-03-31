@@ -12,7 +12,7 @@
      * @returns {string} The constructed URL.
      */
     function constructUrl(): string {
-        return `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}`;
+        return `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}&aqi=yes`;
     }
     
     /**
