@@ -8,6 +8,7 @@ export interface WeatherData {
         condition: {
             text: string;
         };
+        uv: number;
         air_quality: {
             "gb-defra-index": number;
         };

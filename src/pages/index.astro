@@ -1,11 +1,12 @@
 ---
 // Importing the necessary components
-import BasicLayout from '../layouts/BasicLayout.astro'; // BasicLayout layout
-import WeatherCard from '../layouts/WeatherCard.astro';  // WeatherCard layout
+import BasicLayout from '../layouts/BasicLayout.astro'; 			 // BasicLayout layout
+import WeatherCard from '../layouts/WeatherCard.astro';  			 // WeatherCard layout
 import DoubleWeatherCard from '../layouts/DoubleWeatherCard.astro';  // DoubleWeatherCard layout
-import Search from '../components/Search.svelte'; // Search component
-import Current from '../components/Current.svelte'; // Current component
-import AirPollution from '../components/AirPollution.svelte';
+import Search from '../components/Search.svelte'; 					 // Search component
+import Current from '../components/Current.svelte'; 				 // Current component
+import AirPollution from '../components/AirPollution.svelte';		 // AirPollution component
+import UVIndex from '../components/UVIndex.svelte';					 // UVIndex component
 ---
 
 <!-- Using BasicLayout component -->
@@ -14,7 +15,7 @@ import AirPollution from '../components/AirPollution.svelte';
     title="WeatherApp"
 >
 	<!-- Body section of the BasicLayout -->
-	<section slot="body" class="p-4 flex flex-col gap-4">
+	<section slot="body" class="p-4 grid grid-cols-1 gap-4">
 		<!-- Search component -->
 		<Search client:load />
 
@@ -29,7 +30,7 @@ import AirPollution from '../components/AirPollution.svelte';
 		</WeatherCard>
 
 		<DoubleWeatherCard>
-			
+			<UVIndex client:load slot="left" />
 		</DoubleWeatherCard>
 
 		<DoubleWeatherCard>
